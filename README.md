@@ -4,8 +4,7 @@ NameMC displays your skin history in a grid form, in order of history of skins. 
 ## How to install:
 1) Download Python: https://www.python.org/downloads/
 2) Download Pip: https://pip.pypa.io/en/stable/installation/
-3) Open command prompt and change directory into the folder where folder of the script is located. `cd <directory>`
-4) Install requirements by running `install.bat`
+3) Install requirements by running `install.bat`
 
 
 ## How to run:

@@ -8,7 +8,7 @@ NameMC displays your skin history in a grid form, in order of history of skins. 
 
 
 ## How to run:
-1) Replace skins in output folder with your own. (you can extract zip file u can get from https://thomas.gg)
+1) Replace skins in skinart folder with your own. (you can extract zip file u can get from https://thomas.gg)
 2) Run `start.bat`
 3) Get Minecraft Bearer token from your browser: https://kqzz.github.io/mc-bearer-token/ (simple tutorial on how to get it)
 4) Paste bearer token into the command prompt

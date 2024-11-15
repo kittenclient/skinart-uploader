@@ -71,7 +71,7 @@ if style not in ["slim", "classic"]:
     style = "slim"
 
 # Display the warning in all caps
-warning = input("WARNING: YOU CANNOT USE YOUR PC FOR THE NEXT ABOUT 15 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
+warning = input("WARNING: YOU CANNOT USE YOUR PC FOR THE NEXT ABOUT 20 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
 if warning != "YES":
     print("Upload process aborted. Exiting...")
     exit()
@@ -104,8 +104,7 @@ if apply_skins:
         interruptible_sleep(15)  # sleep for 15 seconds, allowing user to interrupt
 
 else:
-    print("To manually apply skins, make sure to apply from 27 down, and reload the NameMC profile so they cache.")
-    print("Program will close in 5 seconds...")
+    print("To manually apply skins, make sure to apply from 27 down, and reload the NameMC profile so they cache.\nProgram will close in 5 seconds...")
     sleep(5)
     print("Exiting...")
     exit()

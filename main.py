@@ -59,7 +59,7 @@ def get_minecraft_username(bearer):
 # Get Bearer token from user input
 bearer = input("Please enter your Bearer token: ")
 
-# Get Minecraft IGN (in-game name) using Bearer token
+# Get Minecraft IGN (in-game name) using the Bearer token
 ign = get_minecraft_username(bearer)
 if ign:
     print(f"Successfully retrieved username: {ign}")
@@ -71,7 +71,7 @@ if style not in ["slim", "classic"]:
     style = "slim"
 
 # Display the warning in all caps
-warning = input("WARNING: YOU CANNOT USE YOUR PC FOR THE NEXT ABOUT 20 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
+warning = input("WARNING: YOU CANNOT USE YOUR PC FOR ABOUT THE NEXT 20 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
 if warning != "YES":
     print("Upload process aborted. Exiting...")
     exit()
@@ -90,21 +90,25 @@ if apply_skins:
     for skin in range(27, 0, -1):
         changeSkin(style, f"Skin-{skin}", bearer)  # use bearer to change skin
 
-        # Print status message once skin has been changed
+        # Print status message once the skin has been changed
         print(f"Skin {skin} applied successfully")
 
-        interruptible_sleep(30)  # sleep for 30 seconds, allowing user to interrupt
+        interruptible_sleep(30)  # sleep for 30 seconds, allowing the user to interrupt
 
-        # Reload tab
-        press_and_release("ctrl+r")
+        # Close tab
+        press_and_release("ctrl+w")
 
-        # Print status message once tab is reloaded
+        # Reopen tab
+        press_and_release("ctrl+shift+t")
+
+        # Print status message once tab is reopened
         print(f"Skin {skin} cached on NameMC successfully")
 
-        interruptible_sleep(15)  # sleep for 15 seconds, allowing user to interrupt
+        interruptible_sleep(15)  # sleep for 15 seconds, allowing the user to interrupt
 
 else:
     print("To manually apply skins, make sure to apply from 27 down, and reload the NameMC profile so they cache.\nProgram will close in 5 seconds...")
     sleep(5)
     print("Exiting...")
     exit()
+    

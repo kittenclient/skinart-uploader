@@ -71,7 +71,7 @@ if style not in ["slim", "classic"]:
     style = "slim"
 
 # Display the warning in all caps
-warning = input("WARNING: YOU CANNOT USE YOUR PC FOR THE NEXT ABOUT 15 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
+warning = input("WARNING: YOU CANNOT USE YOUR PC FOR THE NEXT ABOUT 20 MINUTES DURING THE UPLOAD PROCESS! IF YOU DO, IT MIGHT MESS UP THE SKIN UPLOAD! TYPE 'YES' TO CONFIRM: ").strip().upper()
 if warning != "YES":
     print("Upload process aborted. Exiting...")
     exit()
@@ -93,7 +93,7 @@ if apply_skins:
         # Print status message once skin has been changed
         print(f"Skin {skin} applied successfully")
 
-        interruptible_sleep(18)  # sleep for 18 seconds, allowing user to interrupt
+        interruptible_sleep(30)  # sleep for 30 seconds, allowing user to interrupt
 
         # Reload tab
         press_and_release("ctrl+r")

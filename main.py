@@ -93,7 +93,7 @@ if apply_skins:
         # Print status message once skin has been changed
         print(f"Skin {skin} applied successfully")
 
-        interruptible_sleep(18)  # sleep for 30 seconds, allowing user to interrupt
+        interruptible_sleep(18)  # sleep for 18 seconds, allowing user to interrupt
 
         # Reload tab
         press_and_release("ctrl+r")

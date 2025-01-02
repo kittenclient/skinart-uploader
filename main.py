@@ -31,6 +31,7 @@ def changeSkin(style, skin_name, bearer):
         else:
             if attempt >= 3:
                 print("Error changing skin")
+                break
             sleep(3)
         attempt += 1  # upon fail, increase attempt counter
 
@@ -76,7 +77,7 @@ if warning != "YES":
     print("Upload process aborted. Exiting...")
     exit()
 
-# Automatically apply skins from skinart/Skin-27.png to skinart/Skin-1.png
+# Automatically apply skins from skinart/Skin-1.png to skinart/Skin-27.png
 apply_skins = True
 
 # Confirm the setup
@@ -86,8 +87,8 @@ if apply_skins:
     # Open the NameMC profile in a new window and bring it to the top of the screen
     webbrowser_open(f"http://namemc.com/profile/{ign.lower()}", new=1, autoraise=True)
 
-    # Apply skins from skinart/Skin-27.png to skinart/Skin-1.png
-    for skin in range(27, 0, -1):
+    # Apply skins from skinart/Skin-1.png to skinart/Skin-27.png
+    for skin in range(1, 28):
         changeSkin(style, f"Skin-{skin}", bearer)  # use bearer to change skin
 
         # Print status message once the skin has been changed
@@ -96,10 +97,10 @@ if apply_skins:
         interruptible_sleep(30)  # sleep for 30 seconds, allowing the user to interrupt
 
         # Close tab
-        press_and_release("ctrl+w")
+        press_and_release("ctrl+r")
 
         # Reopen tab
-        press_and_release("ctrl+shift+t")
+        # press_and_release("ctrl+shift+t")
 
         # Print status message once tab is reopened
         print(f"Skin {skin} cached on NameMC successfully")
@@ -107,7 +108,7 @@ if apply_skins:
         interruptible_sleep(15)  # sleep for 15 seconds, allowing the user to interrupt
 
 else:
-    print("To manually apply skins, make sure to apply from 27 down, and reload the NameMC profile so they cache.\nProgram will close in 5 seconds...")
+    print("To manually apply skins, make sure to apply from 1 to 27, and reload the NameMC profile so they cache.\nProgram will close in 5 seconds...")
     sleep(5)
     print("Exiting...")
     exit()

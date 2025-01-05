@@ -1,8 +1,8 @@
 from time import sleep
-from keyboard import press_and_release
 from webbrowser import open as webbrowser_open
 from requests import post, get
 from random import randrange
+import pyautogui # type: ignore
 
 # changeskin function to upload skins from the skinart folder
 def changeSkin(style, skin_name, bearer):
@@ -20,7 +20,6 @@ def changeSkin(style, skin_name, bearer):
     # make request, and if it's successful move on, or try again (max 3 attempts)
     attempt = 0
     while True:
-        # req stores the status code for a skin change request
         req = post(
             url="https://api.minecraftservices.com/minecraft/profile/skins",
             headers=headers,
@@ -38,10 +37,7 @@ def changeSkin(style, skin_name, bearer):
     current_png.close()  # close the png file
 
 # sleep function that can be interrupted
-def interruptible_sleep(sleep_time, break_keybind="control+space"):
-    """
-    Check if exit keybind is being held while sleeping a given duration
-    """
+def interruptible_sleep(sleep_time):
     elapsed_time = 0
     while sleep_time > elapsed_time:
         elapsed_time += 0.01
@@ -96,13 +92,10 @@ if apply_skins:
 
         interruptible_sleep(30)  # sleep for 30 seconds, allowing the user to interrupt
 
-        # Close tab
-        press_and_release("ctrl+r")
+        # Refresh the browser tab
+        pyautogui.hotkey("ctrl", "r")
 
-        # Reopen tab
-        # press_and_release("ctrl+shift+t")
-
-        # Print status message once tab is reopened
+        # Print status message once tab is refreshed
         print(f"Skin {skin} cached on NameMC successfully")
 
         interruptible_sleep(15)  # sleep for 15 seconds, allowing the user to interrupt

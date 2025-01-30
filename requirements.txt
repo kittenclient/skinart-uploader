@@ -1,5 +1,2 @@
-time
-webbrowser
-requests 
-random 
+requests  
 pyautogui
